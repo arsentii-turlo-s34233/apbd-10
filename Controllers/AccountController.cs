@@ -112,6 +112,7 @@ public class AccountController : Controller
             CookieAuthenticationDefaults.AuthenticationScheme,
             principal
         );
+        
 
         return RedirectToAction("Index", "Dashboard");
     }

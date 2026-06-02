@@ -1,0 +1,27 @@
+@model List<apbd_10.Models.UserNote>
+
+<h2>Private Dashboard</h2>
+
+<p>You are logged in.</p>
+
+<a asp-action="CreateNote" class="btn btn-primary mb-3">Add private note</a>
+
+<h3>Your private notes</h3>
+
+@if (!Model.Any())
+{
+    <p>No notes yet.</p>
+}
+else
+{
+    foreach (var note in Model)
+    {
+        <div class="card mb-2">
+            <div class="card-body">
+                <h5>@note.Title</h5>
+                <p>@note.Content</p>
+                <small>@note.CreatedAt.ToLocalTime()</small>
+            </div>
+        </div>
+    }
+}
